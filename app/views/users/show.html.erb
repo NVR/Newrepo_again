@@ -1,0 +1,22 @@
+<table class="profile" summary= "Profile information">
+<tr>
+<td class ="main">
+
+<%= image_tag("avatar.png", :alt=>"avatar", :class=>"gravatar round")%>
+<h1>
+
+
+<%= @user.name%>
+
+<p style="font-size:70% ">
+<%= @user.email %>
+</p>
+</h1>
+
+</td>
+<td class = "sidebar round">
+<strong>Name</strong><%= @user.name %><br/>
+<strong>URL</strong><%=link_to user_path(@user), @user %>
+</td>
+</tr>
+</table>
