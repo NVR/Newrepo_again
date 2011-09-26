@@ -12,11 +12,17 @@
 <%= @user.email %>
 </p>
 </h1>
-
+<% if @user.eventswithname.any? %>
+<tables class ="events" summary="User events">
+<%= render @events %>
+</table>
+<%= will_paginate @events %>
+<% end %>
 </td>
 <td class = "sidebar round">
 <strong>Name</strong><%= @user.name %><br/>
 <strong>URL</strong><%=link_to user_path(@user), @user %>
+<strong>Events</strong> <%= @user.eventswithname.count %>
 </td>
 </tr>
 </table>

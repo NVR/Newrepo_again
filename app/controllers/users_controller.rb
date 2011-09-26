@@ -3,6 +3,7 @@ before_filter :authenticate, :only =>[:edit, :update]
 before_filter :correct_user, :only =>[:edit, :update]
   def show
   @user = User.find(params[:id])
+  @events= @user.eventswithname.paginate(:page => params[:page])
   @title = @user.name 
   end
   def create
